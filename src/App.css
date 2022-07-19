@@ -1,38 +1,140 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Main_Page {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(Background.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.nav {
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.logo {
+    width: 120px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 2.1em;
+    transition: .2s;
 }
 
-.App-link {
-  color: #61dafb;
+.logo:hover {
+    font-size: 2.2em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-links li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    transition: .5s;
+}
+
+.nav-links li a:hover {
+    color: rgba(255, 255, 255, .75);
+}
+
+.nav-links li::after {
+    content: '';
+    height: 4px;
+    width: 0;
+    background: #148dff;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: .5s;
+
+}
+
+.nav-links li:hover::after {
+    width: 100%;
+}
+
+.content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+
+.content p {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+    font-size: 15px;
+
+}
+
+.content h1 {
+    font-size: 55px;
+    margin-top: 25px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.content > h1:hover{
+    font-size: 60px;
+    color: rgba(255,255,255,.8);
+}
+
+button {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #148dff;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+span {
+    background: #148dff;
+    height: 100%;
+    width: 0%;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: .5s;
+    z-index: -1;
+}
+
+.yt{
+    background: #FF0000; 
+}
+
+.youtube{
+    border: 2px solid #FF0000;
+}
+
+button:hover span{
+    width: 101%;
 }
